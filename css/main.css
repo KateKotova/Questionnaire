@@ -1,0 +1,124 @@
+/**
+ * The style sheet for the general elements of the applicaion.
+ * @see module ring-diagram
+ * @author Kate Kotova <katekotova_86@mail.ru>
+ * @copyright Kate Kotova 2017
+ */
+
+h2, h3, p {
+	text-decoration: none;
+	cursor: default;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-family: "Open Sans", Arial, sans-serif;
+	font-style: normal;
+	line-height: 1.2;
+	border: none;
+	outline: none;
+} /* h2, h3, p */
+
+h2 {
+	font-weight: 600;
+	letter-spacing: -1px;
+	color: #3f3f40;
+	font-size: 22px;
+} /* h2 */
+
+h3 {
+	font-weight: 400;
+	letter-spacing: -0.5px;
+	color: #43484a;
+	font-size: 20px;
+} /* h3 */
+
+p {
+	font-weight: 300;
+	letter-spacing: -0.2px;
+	color: #5e5e5e;
+	font-size: 15px;
+	text-align: justify;
+	/*line-height: 26px;*/
+} /* p */
+
+p.group-description {
+	margin-top: 9px;
+}
+
+.questions-carousel ul li ol,
+.questions-carousel p.question {
+	color: #424445;
+	letter-spacing: 0px;
+}
+
+.questions-carousel p.question {
+	font-weight: 700;
+	font-size: 16px;
+	margin-bottom: 12px;
+	line-height: 1.45;
+	letter-spacing: 0.2px;
+} /*.questions-carousel p.question */
+
+.questions-carousel ul li ol {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-weight: 800;
+	font-size: 17px;
+	padding: 0;
+	margin: 0 30px 0 30px;
+} /* .questions-carousel ul li ol */
+
+.answers.table-answers {
+	margin-top: 25px;
+	float: left;
+}
+
+.question-table-wrapper {
+	float: left;
+	padding-left: 18px; 
+}
+
+p.answer {
+	font-size: 15px;
+	line-height: 1.5;	
+	margin-top: 12px;
+	padding: 0 0px 0 35px;
+} /* p.answer */
+
+
+input[type="button" i].pink-button.result-button {
+	margin: 80px auto 0 auto;
+	display: block;
+}
+
+input[type="button" i].pink-button.go-back-to-questionnaire-button {
+	margin: 80px auto 0 auto;
+	display: block;
+}
+
+/*
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+*/
+
+.background-picture,
+.result-wrapper {
+	margin: auto;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+} /* .background-picture */
+
+.background-picture {
+	background: url(../img/ogneniy-bg.png);
+	background-position: left top;
+	background-repeat: repeat;
+} /* .background-picture */

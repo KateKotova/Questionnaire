@@ -1,0 +1,151 @@
+/**
+ * The style sheet for the radio button with label.
+ * @author Dmitry Dimox
+ * @copyright Dimox 30.06.2014
+ * @see {@link http://dimox.name/custom-checkboxes-and-radio-buttons-using-css-only/}
+ * @author Kate Kotova <katekotova_86@mail.ru>
+ * @copyright Kate Kotova 2017
+ */
+
+.radio {
+	vertical-align: top;
+	width: 15px;
+	height: 15px;
+	margin: 0 3px 0 0;
+} /* .radio */
+
+.radio + label {
+	cursor: pointer;
+	font-family: "Open Sans", Arial, sans-serif;
+	font-style: normal;		
+	font-size: 15px;
+	letter-spacing: 0.8px;
+	font-weight: 400;
+	color: #323637;
+} /* .radio + label */
+
+.radio:checked + label {
+	color: #b6006d;
+	text-shadow:
+		0.52px 0.5px 0px #b6006d,
+		0.5px -0.5px 0px #b6006d, 
+		-0.5px 0.5px 0px #b6006d,
+		0.5px -0.5px 0px #b6006d;
+} /* .radio:checked + label */
+
+.radio:not(checked) {
+	position: absolute;
+	opacity: 0;
+}
+.radio:not(checked) + label {
+	position: relative;
+	/*padding: 0 0 0 35px;*/
+	padding: 0 0 0 35px;
+	margin: 0 0 0 -35px;
+}
+
+.radio:not(checked) + label:before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #B3B3B3;
+	box-shadow: 0 0 1.5px rgba(92,95,95,0.5);
+	-webkit-box-shadow: 0 0 1.5px rgba(92,95,95,0.5);
+	-moz-box-shadow: 0 0 1.5px rgba(92,95,95,0.5);
+	-o-box-shadow: 0 0 1.5px rgba(92,95,95,0.5);
+	border-radius: 50%;
+	background: transparent;
+} /* .radio:not(checked) + label:before */
+
+.radio:not(checked) + label:after {
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: #b4006c;
+	box-shadow: inset 0 1.5px 1.5px #82044f;
+	-webkit-box-shadow: inset 0 1.5px 1.5px #82044f;
+	-moz-box-shadow: inset 0 1.5px 1.5px #82044f;
+	-o-box-shadow: inset 0 1.5px 1.5px #82044f;
+	opacity: 0;
+} /* .radio:not(checked) + label:after */
+
+.radio:checked + label:before {
+	border: 1px solid #d74da0;
+	box-shadow: 0 0 1.5px rgba(130,4,79,0.5);
+	-webkit-box-shadow: 0 0 1.5px rgba(130,4,79,0.5);
+	-moz-box-shadow: 0 0 1.5px rgba(130,4,79,0.5);
+	-o-box-shadow: 0 0 1.5px rgba(130,4,79,0.5);
+} /* .radio:checked + label:before */
+
+.radio:checked + label:after {
+	opacity: 1;
+}
+.radio:focus + label:before {
+	box-shadow: 0 0 2px 2px rgba(230,97,117,.5);
+	-webkit-box-shadow: 0 0 2px 2px rgba(230,97,117,.5);
+	-moz-box-shadow: 0 0 2px 2px rgba(230,97,117,.5);
+	-o-box-shadow: 0 0 2px 2px rgba(230,97,117,.5);
+}
+
+.radio:active + label,
+.radio:active:hover + label {
+	color: #8e115c;
+	text-shadow: 0 1px 1px rgba(142,17,92,.5);
+}
+
+.radio:hover + label {
+	color: #d23694;
+}
+
+.radio:active + label:before,
+.radio:active:hover + label:before{
+	border: 1px solid #ce7aac;/*#b592a7;*/
+	box-shadow: 0 0 1px 1px rgba(230,97,117,.4);
+	-webkit-box-shadow: 0 0 1px 1px rgba(230,97,117,.4);
+	-moz-box-shadow: 0 0 1px 1px rgba(230,97,117,.4);
+	-o-box-shadow: 0 0 1px 1px rgba(230,97,117,.4);
+}
+
+.radio:active + label:after,
+.radio:active:hover + label:after{
+	opacity: 0.15;
+	top: 6px;
+	left: 6px;
+	width: 10px;
+	height: 10px;
+}
+
+.radio:hover + label:before{
+	border: 1px solid rgba(206,122,172,1);
+	box-shadow: 0 0 1px 1px rgba(230,97,117,.5);
+	-webkit-box-shadow: 0 0 1px 1px rgba(230,97,117,.5);
+	-moz-box-shadow: 0 0 1px 1px rgba(230,97,117,.5);
+	-o-box-shadow: 0 0 1px 1px rgba(230,97,117,.5);
+}
+
+.radio + label,
+.radio:active + label,
+.radio:active:hover + label,
+.radio:hover + label,
+.radio:not(checked) + label:before,
+.radio:not(checked) + label:after,
+.radio:checked + label:before,
+.radio:checked + label:after,
+.radio:focus + label:before,
+.radio:active + label:before,
+.radio:active:hover + label:before,
+.radio:active + label:after,
+.radio:active:hover + label:after,
+.radio:hover + label:before {
+	transition: all 300ms ease-in-out 0ms;
+	-webkit-transition: all 300ms ease-in-out 0ms;
+	-moz-transition: all 300ms ease-in-out 0ms;
+	-o-transition: all 300ms ease-in-out 0ms;
+}

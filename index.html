@@ -1,0 +1,160 @@
+<!doctype html>
+<html ng-app="questionnaireApp">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic,cyrillic-ext">
+		<link rel="stylesheet" href="css/main.css" type="text/css" />
+		<link rel="stylesheet" href="css/input-button_pink-button.css" type="text/css" />
+		<link rel="stylesheet" href="css/input-radio_radio.css" type="text/css" />
+		<link rel="stylesheet" href="css/question-table.css" type="text/css" />		
+		<link rel="stylesheet" href="css/angular-carousel.css" type="text/css" />
+		<link rel="stylesheet" href="css/angular-carousel_carousel-wrapper.css" type="text/css" />
+		<link rel="stylesheet" href="css/angular-carousel_arrow-button.css" type="text/css" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>		
+		<script src="js/lib/angular-carousel.min.js"></script>
+	</head>
+
+	<body ng-controller="questionsController">
+
+		<div class="background-picture">
+
+			<div class="carousels-wrapper">
+				<div class="carousel-wrapper subjects-carousel">
+					<ul class="carousel"
+							rn-carousel
+							rn-carousel-index="carouselsSlidesIndices.subject"
+							rn-carousel-buffered						
+							rn-carousel-duration="380"
+							rn-carousel-transition="fadeAndSlide">
+
+						<li ng-repeat="subject in dataAllSubjects">
+							<h2>{{subject.subject}}</h2>
+						</li>
+					<ul/>
+				</div>
+
+				<div class="carousel-wrapper groups-carousel">
+					<ul class="carousel"
+							rn-carousel
+							rn-carousel-index="carouselsSlidesIndices.group"
+							rn-carousel-buffered
+							rn-carousel-duration="380">				
+
+						<li ng-repeat="group in getCurrentSubjectGroups()"
+								ng-model="carouselsSlidesIndices.group">
+							<h3>{{getCurrentGroupName()}}</h3>
+							<p class="group-description">{{getCurrentGroupDescription()}}</p>
+						</li>
+					<ul/>
+				</div>
+
+				<div class="carousel-wrapper questions-carousel">
+					<ul class="carousel"
+							rn-carousel
+							rn-carousel-index="carouselsSlidesIndices.question"						
+							rn-carousel-buffered
+							rn-carousel-duration="400"
+							rn-carousel-transition="fadeAndSlide">
+							
+						<li ng-repeat="question in questionsWithSelectedAnswersAndANewOne">
+							<ol type="1"
+									start="{{question.amongAllQuestionsIndex}}">
+								<li>	  	
+									<p class="question">{{question.question}}</p>
+
+									<div ng-class="{'answers': true, 'table-answers': question.tableData!=null}">
+										<p class="answer"
+												ng-repeat="answer in question.answers">
+											<input type="radio"
+												id="{{getAnswerRadioButtonId(question.amongAllQuestionsIndex,$index)}}"
+												class="radio"
+												name="{{question.amongAllQuestionsIndex}}"
+												ng-change="selectAnswer(question,$index)"
+												ng-model="question.selectedAnswerIndex"
+												ng-value="$index"
+												ng-checked="question.selectedAnswerIndex==$index"/>
+											<label for="{{getAnswerRadioButtonId(question.amongAllQuestionsIndex,$index)}}">
+												{{answer.answer}}
+											</label>
+										</p>
+									</div>
+
+									<input type="button"
+										class="pink-button result-button"
+										ng-if="carouselsSlidesIndices.question==dataAllQuestions.length-1"
+										value="{{RESULT_BUTTON_CAPTION}}"
+										ng-disabled="!currentQuestionHasSelectedAnswer()"
+										ng-click="">
+										<!-- TODO: onClick-->
+
+									<div class="question-table-wrapper"
+											ng-if="question.tableData!=null">
+										<table class="question-table"
+												ng-controller="questionTableDataController">
+											<thead>
+												<tr ng-repeat="row in tableData"
+														ng-if="$first"
+														class="header-cell">
+													<th ng-repeat="cell in row track by $index">{{cell}}</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr ng-repeat="row in tableData"
+														ng-if="!$first"
+														ng-class="$odd ? 'odd-row' : 'even-row'">
+													<th class="header-cell">{{row[0]}}</th>
+													<td ng-repeat="cell in row track by $index"
+															ng-if="!$first"
+															class="percent-value-cell">{{cell}}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>									
+
+								</li>
+							</ol>
+						</li>
+					<ul/>
+
+				</div>
+
+				<div class="rn-carousel-arrow-buttons">
+
+					<span id="previous-questions-carousel-slide-arrow-button"
+						class="rn-carousel-control rn-carousel-control-prev rn-arrow-button"
+						ng-click="goToPreviousQuestionsCarouselSlide()"
+						ng-is-visible="questionsCarouselArrowButtons.previous.isShowing">
+					</span>
+
+					<span id="next-questions-carousel-slide-arrow-button"
+						ng-click="!currentQuestionHasSelectedAnswer() || goToNextQuestionsCarouselSlide()"
+						ng-class="{'rn-carousel-control rn-carousel-control-next rn-arrow-button': true,
+						disabled: !currentQuestionHasSelectedAnswer()}"
+						ng-is-visible="questionsCarouselArrowButtons.next.isShowing">
+					</span>
+				</div>	
+
+			</div>
+		</div>
+
+
+		<script src="js/extensions/string-extensions.js"></script>	
+		<script src="js/extensions/window-extensions.js"></script>
+		<script src="js/extensions/math-extensions.js"></script>
+
+		<script src="js/questionnaire/question-table-data-base.js"></script>
+		<script src="js/questionnaire/question-table-data.js"></script>
+		<script src="js/questionnaire/questions-data-base.js"></script>
+		<script src="js/questionnaire/questions-data.js"></script>
+
+		<script type="text/javascript">
+			var myApp = angular.module( 'questionnaireApp', [ 'angular-carousel', "ngAnimate" ] );
+		</script>
+		<script src="js/controllers/questionnaire-controller.js"></script>
+		<script src="js/controllers/question-table-data-controller.js"></script>		
+	</body>
+</html>

@@ -1,0 +1,132 @@
+
+/**
+ * The style sheet for the pink button.
+ * @author KIT Finance Broler
+ * @copyright KIT Finance PJSC, 2000-2017
+ * @see {@link https://brokerkf.ru/}
+ * @author Kate Kotova <katekotova_86@mail.ru>
+ * @copyright Kate Kotova 2017
+ */
+
+/*
+@font-face {
+	font-family: "HelveticaNeue";
+	font-style: normal;
+	src: url("../fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"),
+	url("../fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype"),
+	url("../fonts/HelveticaNeue/HelveticaNeue.svg") format("svg");
+}
+*/
+
+input[type="button" i].pink-button {
+	align-items: flex-start;
+	background: url(../img/buttons-bg.png) repeat-x 0 -37px #b4006c;
+	border-bottom: 1px solid #82044f;
+	border-left: 1px solid #8a0b55;
+	border-radius: 3px;
+	border-right: 1px solid #8a0b55;
+	border-top: 1px solid #a8226f;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-shadow: 0 0 1px #9a9a9a, inset 0 1px 0 #d74da0;
+	-webkit-box-shadow: 0 0 1px #9a9a9a, inset 0 1px 0 #d74da0;
+	-moz-box-shadow: 0 0 1px #9a9a9a, inset 0 1px 0 #d74da0;
+	-o-box-shadow: 0 0 1px #9a9a9a, inset 0 1px 0 #d74da0;
+	color: #fff;
+	cursor: pointer;
+	/*display: inline-block;
+	float: left;*/
+	/*font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial , sans-serif;*/
+	font-family: "Open Sans", Arial, sans-serif;
+	font-style: normal;		
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: 40px;
+	margin: 0;
+	min-height: 40px;
+	padding: 0 25px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #82044f/*#8e115c*/;
+	text-transform: none;	
+	word-spacing: normal;
+	writing-mode: horizontal-tb;
+	-webkit-writing-mode: horizontal-tb;
+	-moz-writing-mode: horizontal-tb;
+	-o-writing-mode: horizontal-tb;
+
+	transition:
+		background,
+		box-shadow,
+		-webkit-box-shadow,
+		-moz-box-shadow,
+		-o-box-shadow
+		150ms ease-in-out 0ms;
+	-webkit-transition:
+		background,
+		box-shadow,
+		-webkit-box-shadow
+		150ms ease-in-out 0ms;
+	-moz-transition:
+		background,
+		box-shadow
+		-moz-box-shadow
+		150ms ease-in-out 0ms;
+	-o-transition:
+		background,
+		box-shadow,
+		-o-box-shadow
+		150ms ease-in-out 0ms;
+} /* input[type="button" i].pink-button */
+
+input[type="button" i].pink-button:enabled:hover {
+	background-position: 0 -233px;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+}
+
+input[type="button" i].pink-button:focus {
+	outline: none;
+}
+
+input[type="button" i].pink-button:enabled:focus {
+	box-shadow: 0 0 2px 3px rgba(230,97,117,.5);
+	-webkit-box-shadow: 0 0 2px 3px rgba(230,97,117,.5);
+	-moz-box-shadow: 0 0 2px 3px rgba(230,97,117,.5);
+	-o-box-shadow: 0 0 2px 3px rgba(230,97,117,.5);
+}
+
+input[type="button" i].pink-button:enabled:active,
+input[type="button" i].pink-button:enabled:active:hover,
+input[type="button" i].pink-button:enabled:active:focus,
+input[type="button" i].pink-button:enabled:active:hover:focus {
+	background-color: #a61168;
+	background-position: 0 80px;
+	box-shadow: 0 0 2px 3px rgba(230,97,117,.5), inset 0px 2px 8px 0px rgba(0, 0, 0,0.39);
+	-webkit-box-shadow: 0 0 2px 3px rgba(230,97,117,.5), inset 0px 2px 8px 0px rgba(0, 0, 0,0.39);
+	-moz-box-shadow: 0 0 2px 3px rgba(230,97,117,.5), inset 0px 2px 8px 0px rgba(0, 0, 0,0.39);
+	-o-box-shadow: 0 0 2px 3px rgba(230,97,117,.5), inset 0px 2px 8px 0px rgba(0, 0, 0,0.39);
+}
+
+/*
+input[type="button" i].pink-button:enabled:focus {
+	outline: 1.5px dashed #e661b1;
+	outline-offset: -5px;
+}
+
+input[type="button" i].pink-button:enabled:active:focus,
+input[type="button" i].pink-button:disabled:focus {
+	outline: none;
+}
+*/
+
+input[type="button" i].pink-button:disabled {
+	opacity: 0.55;
+	cursor: default;
+}
+

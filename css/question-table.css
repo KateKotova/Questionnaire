@@ -1,0 +1,83 @@
+/**
+ * The style sheet for the table for the question data.
+ * @see module question-data 
+ * @author Kate Kotova <katekotova_86@mail.ru>
+ * @copyright Kate Kotova 2017
+ */
+
+table.question-table {
+	border-collapse: collapse;
+	border: 1px solid #393c3e;
+	font-family: "Open Sans", Arial, sans-serif;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 600;
+	color: #1f2021;
+	box-shadow:
+		0.5px 0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0.5px -0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		-0.5px 0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0.5px -0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0px 2px 5px 2px rgba(165, 167, 167, 0.4);
+	-webkit-box-shadow:
+		0.5px 0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0.5px -0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		-0.5px 0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0.5px -0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0px 2px 5px 2px rgba(165, 167, 167, 0.4);
+	-moz-box-shadow:
+		0.5px 0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0.5px -0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		-0.5px 0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0.5px -0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0px 2px 5px 2px rgba(165, 167, 167, 0.4);
+	-o-box-shadow:
+		0.5px 0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0.5px -0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		-0.5px 0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0.5px -0.5px 0.5px 0.5px rgba(154, 154, 154, 0.5),
+		0px 2px 5px 2px rgba(165, 167, 167, 0.4);
+} /* table.question-table */
+
+.question-table th,
+.question-table td {	
+  border-bottom: 1px solid #808383;
+  border-left: 1.5px dotted #6f6f6f;
+	padding: 6.95px 8px;
+}
+
+.question-table .percent-value-cell {
+	text-align: center;
+}
+.question-table .odd-row,
+.question-table .odd-row-first,
+.question-table .odd-row-last {
+	background-color: #f1eeee;
+}
+.question-table .even-row,
+.question-table .even-row-first,
+.question-table .even-row-last {
+	background-color: #d2d1d1;
+}
+.question-table .header-cell {
+	background-color: #94005f;
+	border-bottom: 1.5px solid #43484a;
+	font-weight: 700;
+	color: #FFF;
+	padding: 0 5px;
+} /* .question-table .header-cell */
+
+.question-table .odd-row .header-cell,
+.question-table .even-row .header-cell {
+	border-right: 1.5px solid #43484a;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #1f2021;
+}
+
+.question-table .odd-row .header-cell {
+	background-color: #eadce5;
+}
+.question-table .even-row .header-cell {
+	background-color: #dcbdd1;
+}

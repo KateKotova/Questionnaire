@@ -1,0 +1,92 @@
+/**
+ * The style sheet for the Angular carousels wrapper.
+ * @author Kate Kotova <katekotova_86@mail.ru>
+ * @copyright Kate Kotova 2017
+ */
+
+.carousels-wrapper {
+	background: #fff;
+	border-bottom: 1px solid #ebeae9;
+	border-radius: 4px;
+	padding: 16px 19px;
+	transition: all 200ms ease-in-out 0ms;
+	-webkit-transition: all 200ms ease-in-out 0ms;
+	-moz-transition: all 200ms ease-in-out 0ms;
+	-o-transition: all 200ms ease-in-out 0ms;
+	width: 698px;
+	height: 550px;
+	margin: auto;
+	position: absolute;
+	padding: 20px 63px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+
+	box-shadow: 0 8px 19px #bfbfbf, inset 0 -1px 0 #f7f6f6;
+	-webkit-box-shadow: 0 8px 19px #bfbfbf, inset 0 -1px 0 #f7f6f6;
+	-moz-box-shadow: 0 8px 19px #bfbfbf, inset 0 -1px 0 #f7f6f6;
+	-o-box-shadow: 0 8px 19px #bfbfbf, inset 0 -1px 0 #f7f6f6;
+	/*
+	box-shadow: 1px 2px 2px rgba(13,15,19, 0.09);
+	-webkit-box-shadow: 1px 2px 2px rgba(13,15,19, 0.09);
+	-moz-box-shadow: 1px 2px 2px rgba(13,15,19, 0.09);
+	-o-box-shadow: 1px 2px 2px rgba(13,15,19, 0.09);
+	*/
+} /* .carousels-wrapper */
+
+.carousels-wrapper:hover {
+	box-shadow: 0 8px 29px #cecece, inset 0 -1px 0 #f7f6f6;
+	-webkit-box-shadow: 0 8px 29px #cecece, inset 0 -1px 0 #f7f6f6;
+	-moz-box-shadow: 0 8px 29px #cecece, inset 0 -1px 0 #f7f6f6;
+	-o-box-shadow: 0 8px 29px #cecece, inset 0 -1px 0 #f7f6f6;
+}
+
+/*.carousel-wrapper,
+.carousel-wrapper ul[rn-carousel],
+.carousel-wrapper li[rn-carousel],
+.carousel-wrapper .carousel li {
+	background-color: #ccc;
+}*/
+
+.carousel-wrapper,
+.carousel-wrapper ul[rn-carousel],
+.carousel-wrapper li[rn-carousel] {
+	/*width: 600px;*/
+	margin: 0 auto;
+}
+
+.carousel-wrapper
+.carousel li {
+	width: 100%;
+	height: 100%;
+}
+
+.subjects-carousel,
+.subjects-carousel ul[rn-carousel],
+.subjects-carousel li[rn-carousel],
+.groups-carousel,
+.groups-carousel ul[rn-carousel],
+.groups-carousel li[rn-carousel] {
+	pointer-events: none;
+}
+
+.subjects-carousel,
+.subjects-carousel ul[rn-carousel],
+.subjects-carousel li[rn-carousel] {
+	height: 50px;
+}
+.groups-carousel,
+.groups-carousel ul[rn-carousel],
+.groups-carousel li[rn-carousel] {
+	height: 72px;
+}
+.questions-carousel,
+.questions-carousel ul[rn-carousel],
+.questions-carousel li[rn-carousel] {
+	height: 410px;
+}
+
+
+
